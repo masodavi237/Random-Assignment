@@ -12,9 +12,49 @@ namespace Random_Assignment
 {
     public partial class RandomNumbers : Form
     {
+        Random generator = new Random();
+
         public RandomNumbers()
         {
             InitializeComponent();
+        }
+
+
+        private void btnInteger_Click(object sender, EventArgs e)
+        {
+
+            int min;
+            int max;
+            int random;
+
+            min = Convert.ToInt32(txtMinimum.Text);
+            max = Convert.ToInt32(txtMaximum.Text);
+            random = generator.Next(min, max);
+
+            lblOutput.Text = Convert.ToString(random);
+
+        }
+
+        private void btnDouble_Click(object sender, EventArgs e)
+        {
+
+            int min;
+            int max;
+            double randomDouble;
+            int random;
+
+            min = Convert.ToInt32(txtMinimum.Text);
+            max = Convert.ToInt32(txtMaximum.Text);
+            random = generator.Next(min , max);
+            randomDouble = generator.NextDouble() + (random);
+
+            lblOutput.Text = Convert.ToString(randomDouble);
+
+        }
+
+        private void RandomNumbers_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
